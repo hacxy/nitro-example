@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nitro build",
+    "dev": "nitro dev",
+    "prepare": "nitro prepare",
+    "preview": "node .output/server/index.mjs"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.9",
+    "nitropack": "latest",
+    "zod-to-json-schema": "^3.24.5"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2",
+    "zod": "^3.24.3"
+  }
+}
