@@ -34,12 +34,12 @@ defineRouteMeta({
     requestBody: {
       content: {
         "multipart/form-data": {
-          "schema": {
-            "type": "object",
-            "properties": {
-              "file": {
-                "type": "string",
-                "format": "binary"
+          schema: {
+            type: "object",
+            properties: {
+              file: {
+                type: "string",
+                format: "binary"
               }
             }
           }

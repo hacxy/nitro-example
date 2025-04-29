@@ -5,6 +5,7 @@ const ResponseSchema = z.object({
   background: z.string().describe('背景图url')
 
 })
+
 export default defineEventHandler({
   onRequest: [requireAuth],
   handler: () => {
@@ -18,18 +19,18 @@ defineRouteMeta({
     summary: '根据不同字段上传文件',
     requestBody: {
       required: true,
-      "content": {
+      content: {
         "multipart/form-data": {
-          "schema": {
-            "type": "object",
-            "properties": {
+          schema: {
+            type: "object",
+            properties: {
               avatar: {
-                "type": "string",
-                "format": "binary"
+                type: "string",
+                format: "binary"
               },
               background: {
-                "type": "string",
-                "format": "binary"
+                type: "string",
+                format: "binary"
               }
             }
           }

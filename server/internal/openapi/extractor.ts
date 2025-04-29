@@ -1,6 +1,7 @@
 import ts from "typescript";
 import fs from "fs";
 import path from "path";
+import { JWT_AUTH_FN_NAME } from "../constants";
 // import { string } from "zod";
 
 
@@ -385,8 +386,6 @@ export function extractRouteSchemas(
           definition: schemaDefinition,
         };
       }
-
-
     }
 
     if (
@@ -415,13 +414,12 @@ export function extractRouteSchemas(
 
         defineEventHandler = code.substring(start, end)
 
-        if (defineEventHandler.includes('requireAuth')) {
-          // 根据代码内容 注入额外的配置信息用于控制swagger json内容
+        // 根据代码内容 注入额外的配置信息用于控制swagger json内容
+        if (defineEventHandler.includes(JWT_AUTH_FN_NAME)) {
           swaggerConfig.public = true
         }
       }
     }
-
 
     if (
       requestSchema != null &&
